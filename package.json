@@ -2,14 +2,18 @@
   "$schema": "https://json.schemastore.org/package.json",
   "name": "@pngdeity/opencode-rtk",
   "version": "0.1.0",
+  "private": false,
   "description": "OpenCode V2 plugin that delegates shell command rewriting to rtk for token savings",
   "keywords": [
     "compression",
-    "opencode",
     "opencode-plugin",
     "rtk",
     "tokens"
   ],
+  "homepage": "https://github.com/pngdeity/opencode-rtk#readme",
+  "bugs": {
+    "url": "https://github.com/pngdeity/opencode-rtk/issues"
+  },
   "license": "MIT",
   "author": "Nathan Somers",
   "repository": {
@@ -18,20 +22,55 @@
   },
   "files": [
     "index.ts",
+    "tui.tsx",
     "src/",
-    "README.md",
-    "LICENSE"
+    "!**/*.test.ts"
   ],
   "type": "module",
+  "sideEffects": false,
   "main": "./index.ts",
   "exports": {
     ".": "./index.ts",
-    "./server": "./index.ts"
+    "./tui": "./tui.tsx"
   },
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "provenance": true
   },
   "scripts": {
-    "test": "bun test"
+    "test": "bun test",
+    "prepack": "bun test"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.0.0",
+    "@opencode/plugin": "2.1.3",
+    "@opentui/core": "0.6.6",
+    "@opentui/solid": "0.6.8",
+    "bun-types": "^1.4.4",
+    "solid-js": "1.9.9"
+  },
+  "peerDependencies": {
+    "@opencode/plugin": ">=2.0.0",
+    "@opentui/core": ">=0.6.6",
+    "@opentui/solid": ">=0.6.6",
+    "solid-js": ">=1.9.0"
+  },
+  "peerDependenciesMeta": {
+    "@opencode/plugin": {
+      "optional": true
+    },
+    "@opentui/core": {
+      "optional": true
+    },
+    "@opentui/solid": {
+      "optional": true
+    },
+    "solid-js": {
+      "optional": true
+    }
+  },
+  "engines": {
+    "node": ">=24",
+    "opencode": ">=2.0.0"
   }
 }

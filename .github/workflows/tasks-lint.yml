@@ -1,0 +1,25 @@
+name: Tasks Lint
+on:
+  pull_request:
+    branches: [main]
+jobs:
+  tasks-lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: 24
+      # Every TASKS.md in the repository, not just the root one: monorepos keep
+      # one queue per package, and a malformed nested file blocks just the same.
+      # node_modules is excluded because a committed dependency may ship its own.
+      - name: Lint every TASKS.md
+        run: |
+          mapfile -t files < <(git ls-files -z '*TASKS.md' | tr '\0' '\n' | grep -v '/node_modules/' || true)
+          if [ ${#files[@]} -eq 0 ]; then
+            echo 'No TASKS.md found in this repository, but this workflow was'
+            echo 'installed by include_tasks_lint. Restore TASKS.md, or remove'
+            echo '.github/workflows/tasks-lint.yml and this check.'
+            exit 1
+          fi
+          npx @tasks-md/lint "${files[@]}"

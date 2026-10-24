@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Report a vulnerability
+    url: https://github.com/pngdeity/opencode-rtk/security/advisories/new
+    about: Security issues are private. Do not open them as public issues.

@@ -1,4 +1,48 @@
+# OS
+.DS_Store
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.settings/
+.project
+.classpath
+*.sublime-workspace
+*.sublime-project
+
+# Secrets & environment
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+*.p12
+*.pfx
+secrets.yaml
+secrets.yml
+credentials.json
+
+# Build & artifacts
+*.log
+*.tmp
+*.temp
+# Node / TypeScript
 node_modules/
 dist/
+build/
+.next/
+.nuxt/
+.output/
+.cache/
+*.tsbuildinfo
+
+# --- Everything below this line is yours; template updates never touch it. ---
+# Plugin packs
 *.tgz
-.DS_Store
+
