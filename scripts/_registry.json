@@ -1,0 +1,70 @@
+{
+  "language_markers": {
+    "python": ["pyproject.toml", "setup.py", "setup.cfg", "requirements.txt", "Pipfile"],
+    "javascript": ["package.json"],
+    "go": ["go.mod", "go.sum"],
+    "rust": ["Cargo.toml", "Cargo.lock"],
+    "dotnet": ["*.csproj", "*.sln", "global.json"],
+    "tofu": ["*.tf"]
+  },
+  "nested_language_markers": {
+    "typescript": ["src/**/*.ts", "src/**/*.tsx"],
+    "python": ["bin/*.py", "scripts/*.py", "bin/*.ts"]
+  },
+  "nested_language_runtime": {
+    "typescript": ["package.json", "tsconfig.json"],
+    "python": [
+      "pyproject.toml",
+      "setup.py",
+      "setup.cfg",
+      "requirements.txt",
+      "Pipfile",
+      "package.json"
+    ]
+  },
+  "ci_markers": {
+    "github": [".github/workflows"]
+  },
+  "tool_markers": {
+    "use_precommit": [".pre-commit-config.yaml"],
+    "include_shell_tooling": ["*.sh", ".shellcheckrc"],
+    "include_contributing": ["CONTRIBUTING.md"],
+    "include_security": ["SECURITY.md"],
+    "use_codeowners": ["CODEOWNERS"],
+    "include_tasks_lint": [".github/workflows/tasks-lint.yml"],
+    "include_annotation_gate": [".github/workflows/annotation-gate.yml"],
+    "use_apm": ["apm.yml"],
+    "use_devcontainer": [".devcontainer/devcontainer.json"]
+  },
+  "undetectable": {
+    "repo_name": "comes from the destination directory or the git remote, not a file marker",
+    "repo_description": "free prose; nothing in a tree states what a project is for",
+    "author_name": "the template's own defaults already name the maintainer, and a git config read would be a guess",
+    "author_email": "same as author_name; not stated by any tracked file",
+    "github_username": "read from the git remote, which is absent in a fresh clone's sibling directory",
+    "license_type": "LICENSE holds the resolved text, not an identifier, so MIT and ISC cannot be told apart reliably",
+    "copyright_year": "the year in LICENSE is the adopter's provenance, not a property of the tree; an adopted project's first year cannot be inferred from file mtimes",
+    "tofu_context": "app and org layouts share the same filenames; only intent distinguishes them",
+    "go_scaffolding": "application and tooling share go.mod; cmd/ presence is a weak proxy and the wrong default is costly",
+    "go_module_path": "written in go.mod, but reading it back is ambiguous once go_module_path has been rewritten",
+    "dotnet_namespace": "derived from the .csproj filename only when one csproj exists, and the derivation is already the template's default",
+    "python_scaffolding": "application and tooling both carry pyproject.toml; src/ presence is not decisive",
+    "node_package_manager": "lockfile presence is decisive only when a lockfile is committed, which is not guaranteed",
+    "node_runtime": "package.json does not record which runtime executes it",
+    "node_purpose": "application, library and plugin share a manifest shape; only the exports intent separates them",
+    "node_build": "detectable only from devDependencies, which an adopter may not have installed yet",
+    "node_lint": "biome.json presence indicates biome, but its absence does not imply deno",
+    "node_subpath_exports": "the manifest records current exports, not which of them the adopter wants maintained",
+    "node_package_scope": "the scope is in the existing name, but a scoped name is the adopter's publication identity and reading it back would pin the template to their registry",
+    "node_keywords": "free prose",
+    "node_peer_dependencies": "a peer block in an existing manifest is the adopter's, and copying it would assert a relationship the template cannot verify",
+    "use_commitizen": "leaves no tracked file that distinguishes it from other pre-commit tooling",
+    "use_prereg": "policy choice with no filesystem trace; the default false is the safe answer",
+    "fork_upstream": "the upstream remote is git config, absent from a directory copied without it",
+    "fork_upstream_branch": "follows fork_upstream and has no marker of its own",
+    "codeowners_maintainers": "CODEOWNERS records handles, but not which of them are maintainers versus reviewers",
+    "codeowners_frontend": "a CODEOWNERS entry exists only after generation, so adopting cannot read it back",
+    "codeowners_devops": "same as codeowners_frontend",
+    "go_toolchain": "go.mod's toolchain line pins a compiler the template cannot infer from the tree; an existing line is the adopter's decision about their own CI"
+  }
+}

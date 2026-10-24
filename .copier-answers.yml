@@ -1,0 +1,35 @@
+# Changes here will be overwritten by Copier; NEVER EDIT MANUALLY
+_commit: HEAD
+_src_path: /home/nathan/repos/pngdeity/active/template
+author_email: ''
+author_name: Nathan Somers
+ci_provider: github
+fork_upstream: ''
+github_username: pngdeity
+include_annotation_gate: false
+include_contributing: false
+include_security: false
+include_shell_tooling: false
+include_tasks_lint: true
+languages:
+- typescript
+license_type: MIT
+node_build: none
+node_keywords:
+- compression
+- rtk
+- tokens
+node_lint: biome
+node_package_manager: bun
+node_peer_dependencies: []
+node_purpose: plugin
+node_runtime: bun
+repo_description: OpenCode V2 plugin that delegates shell command rewriting to rtk
+    for token savings
+repo_name: opencode-rtk
+use_apm: false
+use_codeowners: false
+use_commitizen: false
+use_devcontainer: false
+use_precommit: false
+use_prereg: false
