@@ -3,11 +3,18 @@
   "name": "@pngdeity/opencode-rtk",
   "version": "0.1.0",
   "description": "OpenCode V2 plugin that delegates shell command rewriting to rtk for token savings",
-  "type": "module",
-  "main": "./index.ts",
-  "exports": {
-    ".": "./index.ts",
-    "./server": "./index.ts"
+  "keywords": [
+    "compression",
+    "opencode",
+    "opencode-plugin",
+    "rtk",
+    "tokens"
+  ],
+  "license": "MIT",
+  "author": "Nathan Somers",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pngdeity/opencode-rtk.git"
   },
   "files": [
     "index.ts",
@@ -15,20 +22,16 @@
     "README.md",
     "LICENSE"
   ],
+  "type": "module",
+  "main": "./index.ts",
+  "exports": {
+    ".": "./index.ts",
+    "./server": "./index.ts"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "test": "bun test"
-  },
-  "keywords": [
-    "opencode",
-    "opencode-plugin",
-    "rtk",
-    "tokens",
-    "compression"
-  ],
-  "author": "Nathan Somers",
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/pngdeity/opencode-rtk.git"
   }
 }
